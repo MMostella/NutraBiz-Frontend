@@ -4,8 +4,9 @@ import Home from "./components/Home";
 import About from "./components/AboutUs";
 import Product from "./components/Product";
 import Centers from "./components/Centers";
-import Why from "./components/Why";
 import Order from "./components/Order";
+
+import Logo from "./pictures/NB.png";
 import "./App.css";
 
 import styled from "styled-components";
@@ -15,21 +16,31 @@ const StyledApp = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 0.5%;
   height: 100vh;
+  background-color: Grey;
+  overflow: hidden;
+  /* border: 1px solid red; */
 
+  .navLogo {
+    height: 100px;
+    width: 100px;
+  }
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5%;
+    margin: 0 5%;
+    height: 8%;
     width: 90%;
+    /* border: 1px solid green; */
   }
   .content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 93%;
-    width: 99%;
+    width: 100%;
     border-top: 1px solid black;
   }
 `;
@@ -47,7 +58,7 @@ function App() {
     <StyledApp>
       <nav>
         <Link to="/" style={linkStyle}>
-          <h2>NutraBiz LLC</h2>
+          <img src={Logo} className="navLogo" alt="small logo" />
         </Link>
         <Link to="/about" style={linkStyle}>
           <h3>About Us</h3>
@@ -57,9 +68,6 @@ function App() {
         </Link>
         <Link to="/centers" style={linkStyle}>
           <h3>Weight Loss Centers</h3>
-        </Link>
-        <Link to="/why" style={linkStyle}>
-          <h3>Why B2B</h3>
         </Link>
         <Link to="/order" style={linkStyle}>
           <h3>Order Online</h3>
@@ -71,7 +79,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
           <Route path="/centers" element={<Centers />} />
-          <Route path="/why" element={<Why />} />
           <Route path="/order" element={<Order />} />
         </Routes>
       </div>
