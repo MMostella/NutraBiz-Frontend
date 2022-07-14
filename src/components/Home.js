@@ -1,7 +1,19 @@
+import Logo from "../pictures/NutraBiz.png";
+
+import styled from "styled-components";
+
+const StyledHome = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+`;
+
 export default function Home() {
   return (
-    <div>
-      <h1>This is the Home Page</h1>
-    </div>
+    <StyledHome>
+      <img src={Logo} alt="large logo" />
+    </StyledHome>
   );
 }
